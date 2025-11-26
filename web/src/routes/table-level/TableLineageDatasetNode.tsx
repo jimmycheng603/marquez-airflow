@@ -75,12 +75,19 @@ const TableLineageDatasetNode = ({
               {truncateTextFront(lineageDataset.namespace, 40)}
             </MqText>
           </Box>
-          <Box display={'flex'} justifyContent={'space-between'}>
-            <MqText block bold sx={{ mr: 6 }}>
+          <Box>
+            <MqText block bold sx={{ mb: 0.5 }}>
               Name:
             </MqText>
-            <MqText block font={'mono'}>
-              {truncateTextFront(lineageDataset.name, 40)}
+            <MqText
+              block
+              font={'mono'}
+              sx={{
+                whiteSpace: 'nowrap',
+                overflow: 'visible',
+              }}
+            >
+              {lineageDataset.name}
             </MqText>
           </Box>
           {lineageDataset.description && (
@@ -136,6 +143,8 @@ const TableLineageDatasetNode = ({
           filter: isSelected ? `drop-shadow( 0 0 4px ${theme.palette.primary.main})` : 'none',
           rx: 4,
           fill: theme.palette.background.paper,
+          stroke: theme.palette.common.white,
+          strokeWidth: 1,
           cursor: 'pointer',
           transition: 'all 0.3',
         }}
@@ -212,9 +221,29 @@ const TableLineageDatasetNode = ({
           >
             DATASET
           </text>
-          <text fontSize='8' fill={'white'} x={28} y={20} cursor={'pointer'} onClick={handleClick}>
-            {truncateText(node.data.dataset.name, 15)}
-          </text>
+          <foreignObject
+            x={28}
+            y={12}
+            width={node.width - 50}
+            height={Math.max(node.height - 12, 12)}
+            onClick={handleClick}
+            style={{ cursor: 'pointer', overflow: 'visible' }}
+          >
+            <Box
+              sx={{
+                fontSize: '8px',
+                color: 'white',
+                whiteSpace: 'normal',
+                wordBreak: 'break-word',
+                lineHeight: '1.2',
+                overflow: 'visible',
+                minHeight: '10px',
+                width: '100%',
+              }}
+            >
+              {node.data.dataset.name}
+            </Box>
+          </foreignObject>
         </g>
       </MQTooltip>
 

@@ -24,7 +24,6 @@ import { encodeNode, runStateColor } from '../../helpers/nodes'
 import { fetchJobs, resetJobs } from '../../store/actionCreators'
 import { formatUpdatedAt } from '../../helpers'
 import { stopWatchDuration } from '../../helpers/time'
-import { truncateText } from '../../helpers/text'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress/CircularProgress'
 import IconButton from '@mui/material/IconButton'
@@ -179,16 +178,16 @@ const Jobs: React.FC<JobsProps> = ({
                   {jobs.map((job) => {
                     return (
                       <TableRow key={job.name}>
-                        <TableCell align='left'>
+                        <TableCell align='left' sx={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
                           <MqText
                             link
                             linkTo={`/lineage/${encodeNode('JOB', job.namespace, job.name)}`}
                           >
-                            {truncateText(job.name, 40)}
+                            {job.name}
                           </MqText>
                         </TableCell>
-                        <TableCell align='left'>
-                          <MqText>{truncateText(job.namespace, 40)}</MqText>
+                        <TableCell align='left' sx={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
+                          <MqText>{job.namespace}</MqText>
                         </TableCell>
                         <TableCell align='left'>
                           <MqText>{formatUpdatedAt(job.updatedAt)}</MqText>

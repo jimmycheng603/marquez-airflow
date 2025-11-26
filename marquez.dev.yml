@@ -1,17 +1,17 @@
 server:
   applicationConnectors:
   - type: http
-    port: ${MARQUEZ_PORT:-5000}
+    port: ${MARQUEZ_PORT:-3000}
     httpCompliance: RFC7230_LEGACY
   adminConnectors:
   - type: http
-    port: ${MARQUEZ_ADMIN_PORT:-5001}
+    port: ${MARQUEZ_ADMIN_PORT:-3001}
 
 db:
   driverClass: org.postgresql.Driver
-  url: jdbc:postgresql://${POSTGRES_HOST:-postgres}:${POSTGRES_PORT:-5432}/marquez
-  user: marquez
-  password: marquez
+  url: jdbc:postgresql://${POSTGRES_HOST:-localhost}:${POSTGRES_PORT:-5432}/marquez
+  user: ${POSTGRES_USER:-marquez}
+  password: ${POSTGRES_PASSWORD:-1qaz@WSX}
 
 migrateOnStartup: true
 
@@ -23,13 +23,14 @@ logging:
   appenders:
     - type: console
 
+# 如果本地没有 OpenSearch，可以禁用搜索功能
 search:
-  enabled: ${SEARCH_ENABLED:-true}
+  enabled: ${SEARCH_ENABLED:-false}
   scheme: http
-  host: ${SEARCH_HOST:-opensearch}
+  host: ${SEARCH_HOST:-localhost}
   port: ${SEARCH_PORT:-9200}
-  username: admin
-  password: admin
+  username: ${SEARCH_USERNAME:-admin}
+  password: ${SEARCH_PASSWORD:-admin}
 
 tags:
   - name: PII

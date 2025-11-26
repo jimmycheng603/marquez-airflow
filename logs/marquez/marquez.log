@@ -1,0 +1,358 @@
+INFO  [2025-11-26 13:46:20,360] org.eclipse.jetty.util.log: Logging initialized @745ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2025-11-26 13:46:20,392] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2025-11-26 13:46:20,393] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2025-11-26 13:46:20,393] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2025-11-26 13:46:20,396] marquez.MarquezApp: Running startup actions...
+INFO  [2025-11-26 13:46:20,411] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2025-11-26 13:46:20,411] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2025-11-26 13:46:20,411] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2025-11-26 13:46:20,566] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:5432/marquez (PostgreSQL 14.20)
+INFO  [2025-11-26 13:46:20,621] marquez.db.DbMigration: No pending migrations found, skipping...
+INFO  [2025-11-26 13:46:20,956] marquez.service.SearchService: Search is disabled, skipping initialization
+INFO  [2025-11-26 13:46:21,130] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2025-11-26 13:46:21,168] org.eclipse.jetty.setuid.SetUIDListener: Opened application@13004dd8{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
+INFO  [2025-11-26 13:46:21,168] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@4fc6e776{HTTP/1.1, (http/1.1)}{0.0.0.0:3001}
+INFO  [2025-11-26 13:46:21,169] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 17.0.17+10
+INFO  [2025-11-26 13:46:21,176] marquez.jobs.MaterializeViewRefresherJob: Refreshing materialized views every '60' mins.
+
+INFO  [2025-11-26 13:46:21,393] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs (marquez.api.JobResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job}/tags/{tag} (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/tags/{tag} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/stats/datasets (marquez.api.StatsResource)
+    GET     /api/v1/stats/jobs (marquez.api.StatsResource)
+    GET     /api/v1/stats/lineage-events (marquez.api.StatsResource)
+    GET     /api/v1/stats/sources (marquez.api.StatsResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+    GET     /api/v2beta/search/datasets (marquez.api.v2beta.SearchResource)
+    GET     /api/v2beta/search/jobs (marquez.api.v2beta.SearchResource)
+
+INFO  [2025-11-26 13:46:21,394] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@65da4a5d{/,null,AVAILABLE}
+INFO  [2025-11-26 13:46:21,395] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2025-11-26 13:46:21,395] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4c8abec7{/,null,AVAILABLE}
+INFO  [2025-11-26 13:46:21,399] org.eclipse.jetty.server.AbstractConnector: Started application@13004dd8{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
+INFO  [2025-11-26 13:46:21,400] org.eclipse.jetty.server.AbstractConnector: Started admin@4fc6e776{HTTP/1.1, (http/1.1)}{0.0.0.0:3001}
+INFO  [2025-11-26 13:46:21,400] org.eclipse.jetty.server.Server: Started @1785ms
+INFO  [2025-11-26 13:46:33,017] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:46:33,017] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 50
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 358 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 50
+INFO  [2025-11-26 13:46:33,123] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:46:33,125] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 88
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 86
+INFO  [2025-11-26 13:46:33,145] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 103
+INFO  [2025-11-26 13:46:33,150] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 107
+INFO  [2025-11-26 13:46:33,239] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:46:33 +0000] "GET /api/v1/jobs?limit=10&offset=0 HTTP/1.1" 200 1496 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 214
+INFO  [2025-11-26 13:47:03,069] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:47:03,069] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:47:03,069] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:47:03,070] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 16
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 16
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 16
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 17
+INFO  [2025-11-26 13:47:33,049] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:47:33,049] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:47:33,049] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+INFO  [2025-11-26 13:47:33,050] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:47:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+INFO  [2025-11-26 13:48:03,058] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:48:03,058] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:48:03,059] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:48:03,060] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 11
+INFO  [2025-11-26 13:48:33,058] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:48:33,058] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 11
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+INFO  [2025-11-26 13:48:33,062] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 16
+INFO  [2025-11-26 13:48:33,067] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:48:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 20
+INFO  [2025-11-26 13:49:03,057] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:49:03,057] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:49:03,058] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:49:03,059] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 12
+INFO  [2025-11-26 13:49:33,061] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:49:33,062] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 13
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 12
+INFO  [2025-11-26 13:49:33,070] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:49:33,070] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 23
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:49:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 18
+INFO  [2025-11-26 13:50:03,051] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+INFO  [2025-11-26 13:50:03,052] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+INFO  [2025-11-26 13:50:03,055] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:50:03,055] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 12
+INFO  [2025-11-26 13:50:33,055] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:50:33,055] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:50:33,055] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:50:33,055] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:50:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+INFO  [2025-11-26 13:51:03,040] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:51:03,040] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:51:03,041] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+INFO  [2025-11-26 13:51:03,044] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 14
+INFO  [2025-11-26 13:51:33,030] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:51:33,030] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:51:33,030] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+INFO  [2025-11-26 13:51:33,039] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:51:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 17
+INFO  [2025-11-26 13:52:03,037] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:52:03,037] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+INFO  [2025-11-26 13:52:03,037] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:52:03,037] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+INFO  [2025-11-26 13:52:33,038] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:52:33,038] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:52:33,039] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:52:33,039] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:52:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+INFO  [2025-11-26 13:53:03,036] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:03,037] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:03,037] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:03,037] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+INFO  [2025-11-26 13:53:33,031] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:33,033] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:33,033] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:53:33,033] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:53:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 12
+INFO  [2025-11-26 13:54:03,032] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:03,032] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:03,032] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:03,032] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:03 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:03 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:03 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:03 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+INFO  [2025-11-26 13:54:33,038] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:33,038] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:33,038] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:54:33,039] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:33 +0000] "GET /api/v1/stats/lineage-events?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 253 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:33 +0000] "GET /api/v1/stats/datasets?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:33 +0000] "GET /api/v1/stats/sources?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:33 +0000] "GET /api/v1/stats/jobs?period=DAY&timezone=Asia/Shanghai HTTP/1.1" 200 226 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+INFO  [2025-11-26 13:54:47,371] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:47 +0000] "GET /api/v1/namespaces/default/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 34
+INFO  [2025-11-26 13:54:52,452] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:54:52 +0000] "GET /api/v1/namespaces/test-namespace/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 18
+INFO  [2025-11-26 13:55:24,447] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:55:24,447] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:55:24 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:55:24 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 358 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+INFO  [2025-11-26 13:55:24,583] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:55:24 +0000] "GET /api/v1/namespaces/test-namespace/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 21
+INFO  [2025-11-26 13:57:37,626] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:57:37,626] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:37 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:37 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 362 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 10
+INFO  [2025-11-26 13:57:37,701] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:37 +0000] "GET /api/v1/namespaces/test-namespace/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 17
+INFO  [2025-11-26 13:57:53,398] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 13:57:53,398] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:53 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:53 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 362 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 9
+INFO  [2025-11-26 13:57:53,471] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:53 +0000] "GET /api/v1/namespaces/test-namespace/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 23
+INFO  [2025-11-26 13:57:57,577] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:13:57:57 +0000] "GET /api/v1/namespaces/default/datasets?limit=20&offset=0 HTTP/1.1" 200 30 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 18
+INFO  [2025-11-26 14:00:21,166] marquez.jobs.MaterializeViewRefresherJob: Refreshing materialized views...
+INFO  [2025-11-26 14:00:21,187] marquez.jobs.MaterializeViewRefresherJob: Materialized view `lineage_events_by_type_hourly_view` refreshed.
+INFO  [2025-11-26 14:10:43,472] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "PUT /api/v1/namespaces/default HTTP/1.1" 200 268 "-" "python-requests/2.31.0" 23
+INFO  [2025-11-26 14:10:43,712] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 236
+INFO  [2025-11-26 14:10:43,807] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 93
+INFO  [2025-11-26 14:10:43,852] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 43
+INFO  [2025-11-26 14:10:43,923] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 69
+INFO  [2025-11-26 14:10:43,960] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 35
+INFO  [2025-11-26 14:10:44,034] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:44 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 72
+INFO  [2025-11-26 14:10:44,064] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:44 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 27
+INFO  [2025-11-26 14:10:44,128] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:44 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 61
+INFO  [2025-11-26 14:10:44,169] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:44 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 39
+INFO  [2025-11-26 14:10:44,237] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:44 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 67
+INFO  [2025-11-26 14:10:53,583] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 14:10:53,583] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:53 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 7
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:53 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 362 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 8
+INFO  [2025-11-26 14:10:53,688] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:53 +0000] "GET /api/v1/namespaces/default/datasets?limit=20&offset=0 HTTP/1.1" 200 792 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 51
+INFO  [2025-11-26 14:10:56,638] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:10:56 +0000] "GET /api/v1/lineage?nodeId=dataset:default:dataset_a&depth=2 HTTP/1.1" 200 1308 "http://localhost:8080/lineage/dataset/default/dataset_a" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 59
+INFO  [2025-11-26 14:17:59,561] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:17:59 +0000] "GET /api/v1/lineage?nodeId=dataset:default:dataset_a&depth=3 HTTP/1.1" 200 1308 "http://localhost:8080/lineage/dataset/default/dataset_a?depth=3" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 49
+INFO  [2025-11-26 14:21:21,915] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:21:21 +0000] "GET /api/v1/namespaces/default/datasets?limit=20&offset=0 HTTP/1.1" 200 792 "http://localhost:8080/datasets" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 55
+INFO  [2025-11-26 14:28:28,483] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "PUT /api/v1/namespaces/default HTTP/1.1" 200 268 "-" "python-requests/2.31.0" 25
+INFO  [2025-11-26 14:28:28,515] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 27
+INFO  [2025-11-26 14:28:28,587] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 69
+INFO  [2025-11-26 14:28:28,618] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 30
+INFO  [2025-11-26 14:28:28,678] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 57
+INFO  [2025-11-26 14:28:28,709] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 28
+INFO  [2025-11-26 14:28:28,767] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 56
+INFO  [2025-11-26 14:28:28,806] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 37
+INFO  [2025-11-26 14:28:28,869] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 61
+INFO  [2025-11-26 14:28:28,892] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 20
+INFO  [2025-11-26 14:28:28,945] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 51
+INFO  [2025-11-26 14:28:28,971] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:28 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 24
+INFO  [2025-11-26 14:28:29,027] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 52
+INFO  [2025-11-26 14:28:29,053] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 24
+INFO  [2025-11-26 14:28:29,103] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 48
+INFO  [2025-11-26 14:28:29,137] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 32
+INFO  [2025-11-26 14:28:29,195] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 56
+INFO  [2025-11-26 14:28:29,219] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 22
+INFO  [2025-11-26 14:28:29,268] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 47
+INFO  [2025-11-26 14:28:29,294] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 23
+INFO  [2025-11-26 14:28:29,343] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 46
+INFO  [2025-11-26 14:28:29,367] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 21
+INFO  [2025-11-26 14:28:29,412] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 44
+INFO  [2025-11-26 14:28:29,454] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 39
+INFO  [2025-11-26 14:28:29,519] marquez.logging.LoggingMdcFilter: status: 201
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:29 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "python-requests/2.31.0" 63
+INFO  [2025-11-26 14:28:34,947] marquez.logging.LoggingMdcFilter: status: 200
+INFO  [2025-11-26 14:28:34,947] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:34 +0000] "GET /api/v1/tags HTTP/1.1" 200 145 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 5
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:34 +0000] "GET /api/v1/namespaces HTTP/1.1" 200 360 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 6
+INFO  [2025-11-26 14:28:35,062] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:35 +0000] "GET /api/v1/namespaces/default/datasets?limit=20&offset=0 HTTP/1.1" 200 1915 "http://localhost:8080/datasets/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 68
+INFO  [2025-11-26 14:28:36,919] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:36 +0000] "GET /api/v1/lineage?nodeId=dataset:default:aggregated_metrics_calculation&depth=2 HTTP/1.1" 200 2182 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 45
+INFO  [2025-11-26 14:28:49,475] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:49 +0000] "GET /api/v1/lineage?nodeId=dataset:default:aggregated_metrics_calculation&depth=3 HTTP/1.1" 200 2864 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=false&depth=3" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 49
+INFO  [2025-11-26 14:28:49,644] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:49 +0000] "GET /api/v1/lineage?nodeId=dataset:default:aggregated_metrics_calculation&depth=4 HTTP/1.1" 200 2986 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=false&depth=4" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 39
+INFO  [2025-11-26 14:28:50,277] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:50 +0000] "GET /api/v1/lineage?nodeId=dataset:default:aggregated_metrics_calculation&depth=5 HTTP/1.1" 200 2986 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=false&depth=5" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 33
+INFO  [2025-11-26 14:28:50,944] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:28:50 +0000] "GET /api/v1/lineage?nodeId=dataset:default:aggregated_metrics_calculation&depth=6 HTTP/1.1" 200 2986 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=false&depth=6" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 34
+INFO  [2025-11-26 14:33:52,812] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:33:52 +0000] "GET /api/v1/namespaces/default/datasets/source_data_ingestion HTTP/1.1" 200 493 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=true&depth=6&showJobs=false" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 73
+INFO  [2025-11-26 14:33:53,178] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:33:53 +0000] "GET /api/v1/namespaces/default/datasets/source_data_ingestion HTTP/1.1" 200 493 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=true&depth=6&showJobs=false" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 20
+INFO  [2025-11-26 14:33:53,861] marquez.logging.LoggingMdcFilter: status: 200
+[0:0:0:0:0:0:0:1] - - [26/11月/2025:14:33:53 +0000] "GET /api/v1/namespaces/default/datasets/metadata_collection HTTP/1.1" 200 494 "http://localhost:8080/lineage/dataset/default/aggregated_metrics_calculation?showDatasets=true&depth=6&showJobs=false" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" 19

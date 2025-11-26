@@ -40,15 +40,15 @@ const MqIconButton: React.FC<IconButtonProps> = ({ id, title, active, children, 
             width: theme.spacing(6),
             height: theme.spacing(6),
             borderRadius: theme.spacing(1),
-            color: theme.palette.secondary.main,
+            color: theme.palette.common.white,
             transition: theme.transitions.create(['background-color', 'color']),
             border: '2px solid transparent',
           },
           active
             ? {
-                background: lighten(theme.palette.background.default, 0.05),
-                color: theme.palette.common.white,
-              }
+              background: lighten(theme.palette.background.default, 0.05),
+              color: theme.palette.common.white,
+            }
             : {}
         )}
       >
@@ -61,6 +61,8 @@ const MqIconButton: React.FC<IconButtonProps> = ({ id, title, active, children, 
           fontFamily: 'Karla',
           userSelect: 'none',
           fontSize: '.625rem',
+          color: theme.palette.common.white,
+          fontWeight: 'bold',
         }}
       >
         {title}

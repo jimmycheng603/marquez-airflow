@@ -1,0 +1,3 @@
+[HPM] Proxy created: /api/v1  -> http://localhost:3000/
+[HPM] Proxy created: /api/v2beta  -> http://localhost:3000/
+App listening on port 8080!

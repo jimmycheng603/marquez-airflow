@@ -43,6 +43,8 @@ const ColumnLevel: React.FC<ColumnLevelProps> = ({
 
   const [isCompact, setIsCompact] = useState(searchParams.get('isCompact') === 'true')
   const [isFull, setIsFull] = useState(searchParams.get('isFull') === 'true')
+  const [showJobs, setShowJobs] = useState(searchParams.get('showJobs') === 'true')
+  const [showDatasets, setShowDatasets] = useState(searchParams.get('showDatasets') === 'true')
 
   const graphControls = useRef<ZoomPanControls>()
 
@@ -82,14 +84,16 @@ const ColumnLevel: React.FC<ColumnLevelProps> = ({
     `${nodeType}:${namespace}:${name}`,
     isCompact,
     isFull,
-    collapsedNodes
+    collapsedNodes,
+    showJobs,
+    showDatasets
   )
 
   useEffect(() => {
     setTimeout(() => {
       graphControls.current?.fitContent()
     }, 300)
-  }, [nodes.length, isCompact])
+  }, [nodes.length, isCompact, showJobs, showDatasets])
 
   return (
     <>
@@ -102,6 +106,10 @@ const ColumnLevel: React.FC<ColumnLevelProps> = ({
         setIsCompact={setIsCompact}
         isFull={isFull}
         setIsFull={setIsFull}
+        showJobs={showJobs}
+        setShowJobs={setShowJobs}
+        showDatasets={showDatasets}
+        setShowDatasets={setShowDatasets}
       />
       <Box height={`calc(100vh - ${HEADER_HEIGHT}px - ${HEADER_HEIGHT}px - 1px)`}>
         <Drawer

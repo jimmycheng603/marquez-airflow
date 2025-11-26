@@ -23,7 +23,7 @@ import { Dashboard } from '@mui/icons-material'
 import iconSearchArrow from '../../img/iconSearchArrow.svg'
 import marquez_logo from './marquez-icon-white-solid.svg'
 
-interface SidenavProps {}
+interface SidenavProps { }
 
 const Sidenav: React.FC<SidenavProps> = () => {
   const i18next = require('i18next')
@@ -125,17 +125,32 @@ const Sidenav: React.FC<SidenavProps> = () => {
                 window.location.reload()
               }}
               input={<MqInputNoIcon />}
+              sx={{
+                color: theme.palette.common.white,
+                '& .MuiSelect-icon': {
+                  color: theme.palette.common.white,
+                },
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: theme.palette.secondary.main,
+                },
+                '&:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: theme.palette.secondary.main,
+                },
+                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: theme.palette.secondary.main,
+                },
+              }}
             >
-              <MenuItem key={'en'} value={'en'}>
+              <MenuItem key={'en'} value={'en'} sx={{ color: theme.palette.common.white }}>
                 {'en'}
               </MenuItem>
-              <MenuItem key={'es'} value={'es'}>
+              <MenuItem key={'es'} value={'es'} sx={{ color: theme.palette.common.white }}>
                 {'es'}
               </MenuItem>
-              <MenuItem key={'fr'} value={'fr'}>
+              <MenuItem key={'fr'} value={'fr'} sx={{ color: theme.palette.common.white }}>
                 {'fr'}
               </MenuItem>
-              <MenuItem key={'pl'} value={'pl'}>
+              <MenuItem key={'pl'} value={'pl'} sx={{ color: theme.palette.common.white }}>
                 {'pl'}
               </MenuItem>
             </Select>

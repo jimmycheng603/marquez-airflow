@@ -14,6 +14,10 @@
 
 buildscript {
     repositories {
+        // 使用阿里云镜像加速插件下载
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        // 备用：官方仓库
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
@@ -28,6 +32,10 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
+        // 使用阿里云镜像加速依赖下载
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        // 备用：官方仓库
         mavenCentral()
     }
 }

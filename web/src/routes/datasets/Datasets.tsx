@@ -28,7 +28,6 @@ import {
 } from '../../helpers/nodes'
 import { fetchDatasets, resetDatasets } from '../../store/actionCreators'
 import { formatUpdatedAt } from '../../helpers'
-import { truncateText } from '../../helpers/text'
 import { useTheme } from '@emotion/react'
 import Assertions from '../../components/datasets/Assertions'
 import Box from '@mui/material/Box'
@@ -195,7 +194,7 @@ const Datasets: React.FC<DatasetsProps> = ({
                       const assertions = datasetFacetsQualityAssertions(dataset.facets)
                       return (
                         <TableRow key={dataset.name}>
-                          <TableCell align='left'>
+                          <TableCell align='left' sx={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
                             <MqText
                               link
                               linkTo={`/lineage/${encodeNode(
@@ -204,11 +203,11 @@ const Datasets: React.FC<DatasetsProps> = ({
                                 dataset.name
                               )}`}
                             >
-                              {truncateText(dataset.name, 40)}
+                              {dataset.name}
                             </MqText>
                           </TableCell>
-                          <TableCell align='left'>
-                            <MqText>{truncateText(dataset.namespace, 40)}</MqText>
+                          <TableCell align='left' sx={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
+                            <MqText>{dataset.namespace}</MqText>
                           </TableCell>
                           <TableCell align='left'>
                             <MqText>{dataset.sourceName}</MqText>

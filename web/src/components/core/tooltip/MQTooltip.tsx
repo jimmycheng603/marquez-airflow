@@ -13,18 +13,18 @@ interface MqToolTipProps {
   onOpen?: (event: React.SyntheticEvent) => void
   onClose?: (event: React.SyntheticEvent) => void
   placement?:
-    | 'left'
-    | 'right'
-    | 'top'
-    | 'right-end'
-    | 'left-end'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-end'
-    | 'top-start'
-    | 'bottom-start'
-    | 'left-start'
-    | 'right-start'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'right-end'
+  | 'left-end'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-end'
+  | 'top-start'
+  | 'bottom-start'
+  | 'left-start'
+  | 'right-start'
 }
 
 const MQTooltip: React.FC<MqToolTipProps> = ({ title, onOpen, onClose, children, placement }) => {
@@ -41,7 +41,7 @@ const MQTooltip: React.FC<MqToolTipProps> = ({ title, onOpen, onClose, children,
             backgroundColor: `${darken(theme.palette.background.paper, 0.1)}`,
             color: theme.palette.common.white,
             border: `1px solid ${theme.palette.secondary.main}`,
-            maxWidth: '600px',
+            maxWidth: 'none',
             fontSize: 14,
           },
         },

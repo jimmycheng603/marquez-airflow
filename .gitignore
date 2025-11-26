@@ -17,7 +17,6 @@
 .vscode/
 __pycache__
 api/out/
-bin/
 build/
 clients/java/out/
 dist/

@@ -10,7 +10,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons/faCog'
 import { formatUpdatedAt } from '../../helpers'
 import { runStateColor } from '../../helpers/nodes'
 import { theme } from '../../helpers/theme'
-import { truncateText, truncateTextFront } from '../../helpers/text'
+import { truncateTextFront } from '../../helpers/text'
 import { useNavigate, useParams } from 'react-router-dom'
 import Box from '@mui/system/Box'
 import MQTooltip from '../../components/core/tooltip/MQTooltip'
@@ -52,12 +52,19 @@ const TableLineageJobNode = ({ node }: TableLineageJobNodeProps & StateProps) =>
               {truncateTextFront(job.namespace, 40)}
             </MqText>
           </Box>
-          <Box display={'flex'} justifyContent={'space-between'}>
-            <MqText block bold sx={{ mr: 6 }}>
+          <Box>
+            <MqText block bold sx={{ mb: 0.5 }}>
               Name:
             </MqText>
-            <MqText block font={'mono'}>
-              {truncateTextFront(job.name, 40)}
+            <MqText
+              block
+              font={'mono'}
+              sx={{
+                whiteSpace: 'nowrap',
+                overflow: 'visible',
+              }}
+            >
+              {job.name}
             </MqText>
           </Box>
           {job.description && (
@@ -109,6 +116,8 @@ const TableLineageJobNode = ({ node }: TableLineageJobNodeProps & StateProps) =>
           filter: isSelected ? `drop-shadow( 0 0 4px ${theme.palette.primary.main})` : 'none',
           rx: 4,
           fill: theme.palette.background.paper,
+          stroke: theme.palette.common.white,
+          strokeWidth: 1,
           cursor: 'pointer',
           transition: 'filter 0.3',
         }}
@@ -151,9 +160,29 @@ const TableLineageJobNode = ({ node }: TableLineageJobNodeProps & StateProps) =>
           >
             JOB
           </text>
-          <text fontSize='8' fill={'white'} x={28} y={20} onClick={handleClick} cursor={'pointer'}>
-            {truncateText(node.data.job.name, 16)}
-          </text>
+          <foreignObject
+            x={28}
+            y={12}
+            width={node.width - 36}
+            height={Math.max(node.height - 12, 12)}
+            onClick={handleClick}
+            style={{ cursor: 'pointer', overflow: 'visible' }}
+          >
+            <Box
+              sx={{
+                fontSize: '8px',
+                color: 'white',
+                whiteSpace: 'normal',
+                wordBreak: 'break-word',
+                lineHeight: '1.2',
+                overflow: 'visible',
+                minHeight: '10px',
+                width: '100%',
+              }}
+            >
+              {node.data.job.name}
+            </Box>
+          </foreignObject>
         </g>
       </MQTooltip>
     </g>
