@@ -42,7 +42,7 @@ const calculateTextHeight = (
   // 使用保守估算：每行大约可以显示 10-12 个字符（对于 8px 字体，80px 宽度）
   const charsPerLine = Math.floor(availableWidth / (fontSize * 0.7))
   const lines = Math.max(1, Math.ceil(text.length / charsPerLine))
-
+  
   // 返回总高度：行数 * 每行高度
   return lines * fontSize * lineHeight
 }
@@ -259,17 +259,17 @@ export const createElkNodes = (
         nodeHeight = Math.max(minHeight, calculatedHeight)
       }
 
-      nodes.push({
-        id: node.id,
-        kind: node.type,
+        nodes.push({
+          id: node.id,
+          kind: node.type,
         width: nodeWidth,
-        height: nodeHeight,
-        data: {
-          dataset: data,
-        },
-      })
+          height: nodeHeight,
+          data: {
+            dataset: data,
+          },
+        })
+      }
     }
-  }
 
   // 如果showDatasets为false，添加通过dataset连接的job到job的直接边
   if (!showDatasets) {

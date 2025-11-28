@@ -120,21 +120,21 @@ export const ActionBar = ({
         />
         <Box display={'flex'} flexDirection={'column'} sx={{ gap: 0 }}>
           <Box display={'flex'} sx={{ gap: 2 }}>
-            <FormControlLabel
-              control={
-                <Switch
-                  size={'small'}
-                  value={isFull}
-                  defaultChecked={searchParams.get('isFull') === 'true'}
+          <FormControlLabel
+            control={
+              <Switch
+                size={'small'}
+                value={isFull}
+                defaultChecked={searchParams.get('isFull') === 'true'}
                   checked={isFull}
-                  onChange={(_, checked) => {
-                    setIsFull(checked)
-                    searchParams.set('isFull', checked.toString())
-                    setSearchParams(searchParams)
-                  }}
-                />
-              }
-              label={<MqText font={'mono'}>Full Graph</MqText>}
+                onChange={(_, checked) => {
+                  setIsFull(checked)
+                  searchParams.set('isFull', checked.toString())
+                  setSearchParams(searchParams)
+                }}
+              />
+            }
+            label={<MqText font={'mono'}>Full Graph</MqText>}
               sx={{ margin: 0 }}
             />
             <FormControlLabel
@@ -156,21 +156,21 @@ export const ActionBar = ({
             />
           </Box>
           <Box display={'flex'} sx={{ gap: 2 }}>
-            <FormControlLabel
-              control={
-                <Switch
-                  size={'small'}
-                  value={isCompact}
-                  defaultChecked={searchParams.get('isCompact') === 'true'}
+          <FormControlLabel
+            control={
+              <Switch
+                size={'small'}
+                value={isCompact}
+                defaultChecked={searchParams.get('isCompact') === 'true'}
                   checked={isCompact}
-                  onChange={(_, checked) => {
-                    setIsCompact(checked)
-                    searchParams.set('isCompact', checked.toString())
-                    setSearchParams(searchParams)
-                  }}
-                />
-              }
-              label={<MqText font={'mono'}>Compact Nodes</MqText>}
+                onChange={(_, checked) => {
+                  setIsCompact(checked)
+                  searchParams.set('isCompact', checked.toString())
+                  setSearchParams(searchParams)
+                }}
+              />
+            }
+            label={<MqText font={'mono'}>Compact Nodes</MqText>}
               sx={{ margin: 0 }}
             />
             <FormControlLabel
@@ -189,7 +189,7 @@ export const ActionBar = ({
               }
               label={<MqText font={'mono'}>Show Jobs</MqText>}
               sx={{ margin: 0 }}
-            />
+          />
           </Box>
         </Box>
       </Box>
